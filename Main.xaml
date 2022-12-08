@@ -518,6 +518,18 @@
                         </Assign>
                       </If.Else>
                     </If>
+                    <Assign DisplayName="Assign reportDate" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:DateTime">
+                          <mca:CSharpReference x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpReference`1_283">ReportDate</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">
+                          <mca:CSharpValue x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpValue`1_790">DateTime.Now.AddDays(-11)</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
                     <ui:LogMessage DisplayName="Log Date info Log" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="Info">
                       <ui:LogMessage.Message>
                         <InArgument x:TypeArguments="x:Object">
@@ -538,10 +550,10 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">210,337</av:Point>
                           <av:Size x:Key="ShapeSize">200,66</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">310,403 310,469</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">310,403 310,459</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Sequence: Check Report File" sap:VirtualizedContainerService.HintSize="242,719" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                      <Sequence DisplayName="Sequence: Check Report File" sap:VirtualizedContainerService.HintSize="558,2279" sap2010:WorkflowViewState.IdRef="Sequence_89">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Base2URL" />
                           <Variable x:TypeArguments="x:String" Name="Base2Credential" />
@@ -563,23 +575,23 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
                           <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="605,978" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="613,978" sap2010:WorkflowViewState.IdRef="Sequence_84">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence sap:VirtualizedContainerService.HintSize="568,849" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                              <Sequence sap:VirtualizedContainerService.HintSize="571,1085" sap2010:WorkflowViewState.IdRef="Sequence_83">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Assign Tracker" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                <Assign DisplayName="Assign Tracker" sap:VirtualizedContainerService.HintSize="529,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">
                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_236">Tracker</mca:CSharpReference>
@@ -591,7 +603,7 @@
                                     </InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists: Tracker Exist?" sap:VirtualizedContainerService.HintSize="521,51" sap2010:WorkflowViewState.IdRef="PathExists_4" PathType="File">
+                                <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists: Tracker Exist?" sap:VirtualizedContainerService.HintSize="529,51" sap2010:WorkflowViewState.IdRef="PathExists_4" PathType="File">
                                   <ui:PathExists.Exists>
                                     <OutArgument x:TypeArguments="x:Boolean">
                                       <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_237">TrackerExist</mca:CSharpReference>
@@ -609,7 +621,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:PathExists>
-                                <If DisplayName="If TrackerExist" sap:VirtualizedContainerService.HintSize="521,51" sap2010:WorkflowViewState.IdRef="If_28">
+                                <If DisplayName="If TrackerExist" sap:VirtualizedContainerService.HintSize="529,51" sap2010:WorkflowViewState.IdRef="If_28">
                                   <If.Condition>
                                     <InArgument x:TypeArguments="x:Boolean">
                                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_683">TrackerExist</mca:CSharpValue>
@@ -637,7 +649,7 @@
                                     </ui:InvokeWorkflowFile>
                                   </If.Else>
                                 </If>
-                                <Sequence DisplayName="Sequence: Get Report" sap:VirtualizedContainerService.HintSize="521,66" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                <Sequence DisplayName="Sequence: Get Report" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_75">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -691,7 +703,7 @@
                                     </If.Else>
                                   </If>
                                 </Sequence>
-                                <Sequence DisplayName="Sequence: Download Vss Report" sap:VirtualizedContainerService.HintSize="521,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                <Sequence DisplayName="Sequence: Download Vss Report" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="VssDate" />
                                   </Sequence.Variables>
@@ -720,7 +732,7 @@
                                     </ui:ReadCell.WorkbookPath>
                                   </ui:ReadCell>
                                 </Sequence>
-                                <Sequence DisplayName="Sequence: Verify Account Details" sap:VirtualizedContainerService.HintSize="521,66" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                <Sequence DisplayName="Sequence: Verify Account Details" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Decimal" Name="TotalAmountBase2" />
                                   </Sequence.Variables>
@@ -785,7 +797,7 @@
                                     </If.Else>
                                   </If>
                                 </Sequence>
-                                <If DisplayName="If VSS Report Not Downloaded" sap:VirtualizedContainerService.HintSize="521,51" sap2010:WorkflowViewState.IdRef="If_31">
+                                <If DisplayName="If VSS Report Not Downloaded" sap:VirtualizedContainerService.HintSize="529,51" sap2010:WorkflowViewState.IdRef="If_31">
                                   <If.Condition>
                                     <InArgument x:TypeArguments="x:Boolean">
                                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_692">TrackCell != "DONE"</mca:CSharpValue>
@@ -821,7 +833,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <Sequence DisplayName="Sequence: Email Sent" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                <Sequence DisplayName="Sequence: Email Sent" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_82">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -934,7 +946,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <ui:MultipleAssign DisplayName="Assign all WF Varables" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_19">
+                        <ui:MultipleAssign DisplayName="Assign all WF Varables" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_19">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_94">
@@ -1054,7 +1066,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:MultipleAssign>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create_File_to_Processing workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_126" UnSafe="False" WorkflowFileName="Project\\Create_File_to_Processing.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create_File_to_Processing workflow" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_126" UnSafe="False" WorkflowFileName="Project\\Create_File_to_Processing.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
                               <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_710">ProcessingFilePath</mca:CSharpValue>
@@ -1071,17 +1083,17 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <Sequence DisplayName="Sequence: Login and Download" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                        <Sequence DisplayName="Sequence: Login and Download" sap:VirtualizedContainerService.HintSize="516,1626" sap2010:WorkflowViewState.IdRef="Sequence_87">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Int32" Name="Counter" />
                           </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign Counter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                          <Assign DisplayName="Assign Counter" sap:VirtualizedContainerService.HintSize="474,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">
                                 <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_251">Counter</mca:CSharpReference>
@@ -1091,12 +1103,12 @@
                               <InArgument x:TypeArguments="x:Int32">2</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While: Try to login Times " sap:VirtualizedContainerService.HintSize="334,225" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While: Try to login Times " sap:VirtualizedContainerService.HintSize="474,870" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
                             <ui:InterruptibleDoWhile.Body>
-                              <TryCatch sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                              <TryCatch sap:VirtualizedContainerService.HintSize="438,705" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -1140,7 +1152,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:MultipleAssign>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_127" UnSafe="False" WorkflowFileName="Downloads\\Login_VSS.xaml">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_127" UnSafe="False" WorkflowFileName="Downloads\\Login_Base2.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_Login">
                                           <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_254">Login</mca:CSharpReference>
@@ -1298,7 +1310,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InterruptibleDoWhile>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="474,51" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
                                 <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_725">"Login: "+Login</mca:CSharpValue>
@@ -1389,7 +1401,7 @@
                             </Assign.Value>
                           </Assign>
                         </Sequence>
-                        <Sequence DisplayName="READ Base2 SHEET " sap:VirtualizedContainerService.HintSize="476,1261" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                        <Sequence DisplayName="READ Base2 SHEET " sap:VirtualizedContainerService.HintSize="516,66" sap2010:WorkflowViewState.IdRef="Sequence_88">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="sd:DataTable" Name="inputDT" />
                           </Sequence.Variables>
@@ -1582,7 +1594,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
                         </Sequence>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Delete_Download_File workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_129" UnSafe="False" WorkflowFileName="Project\\Delete_Download_File.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Delete_Download_File workflow" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_129" UnSafe="False" WorkflowFileName="Project\\Delete_Download_File.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_DownloadFilePath">
                               <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_739">DownloadedBase2FilePath</mca:CSharpValue>
@@ -1595,7 +1607,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Report _To_Prod_Team" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_130" UnSafe="False" WorkflowFileName="Project\\Send_Report _To_Prod_Team.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Report _To_Prod_Team" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_130" UnSafe="False" WorkflowFileName="Project\\Send_Report _To_Prod_Team.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
                               <mca:CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_740">Config</mca:CSharpValue>
@@ -1619,7 +1631,7 @@
                         <FlowStep x:Name="__ReferenceID0">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">210,469</av:Point>
+                              <av:Point x:Key="ShapeLocation">210,459</av:Point>
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
